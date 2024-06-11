@@ -45,3 +45,54 @@ class Solution{
 }
 
 */
+
+
+// Second solution
+
+/* java
+
+int p = 0;
+int q = 0;
+while(p<m && q<n){
+    if(nums1[p]<=nums2[q]){
+        nums3.add(nums1[p])
+        p++;
+    }
+    else{
+        nums3.add(nums2[q]);
+        q++;
+    }
+}
+while(p<m){
+    nums3.add(nums1[p ++]);
+}
+
+while(q<n){
+    nums3.add(nums2[q ++]);
+}
+
+
+Actual code
+
+
+class Solution{
+    public void merge(int[] nums1, int m, int[] nums2, int n){
+        int p = m-1;
+        int q = n-1;
+        int r = nums1.length - 1;
+
+        while(r >= 0){
+            if(q<0){
+                break;
+            }
+            if(p>=0 && nums1[p] >= nums2[q]){
+                nums1[r--] = nums1[p--];
+            }
+            else{
+                nums1[r--] = nums2[q--];
+            }
+        }
+    }
+}
+
+*/
